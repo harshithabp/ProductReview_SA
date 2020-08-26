@@ -11,6 +11,17 @@ from textblob import TextBlob
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pandas as pd
 import re
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import os
+chrome_options = webdriver.chromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-ussage")
+chrome_options.add_argument("--no-sandbox")
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER PATH"), chrome_options=chrome_options) 
+
 
 
 application = app = Flask(__name__) 
@@ -41,7 +52,7 @@ def predict():
     review_star_rating=[]
     if request.method == 'POST':
         result = request.form['Review_url']
-        driver = webdriver.Chrome(r'C:\Users\harshitha\Downloads\chromedriver_win321\chromedriver.exe')
+        #driver = webdriver.Chrome(r'C:\Users\harshitha\Downloads\chromedriver_win321\chromedriver.exe')
         page=result + "&pageNumber"
         for x in range(1,250):
             base_url=page+"={}".format(x)

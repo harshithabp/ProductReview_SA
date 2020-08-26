@@ -15,12 +15,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
-chrome = webdriver.ChromeOptions()
-chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-dev-shm-ussage")
-chrome_options.add_argument("--no-sandbox")
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER PATH"), chrome_options=chrome) 
+opts = webdriver.ChromeOptions()
+opts.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+opts.add_argument("--headless")
+opts.add_argument("--disable-dev-shm-ussage")
+opts.add_argument("--no-sandbox")
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER PATH"), chrome_options=opts) 
 
 
 

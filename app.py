@@ -56,7 +56,7 @@ def predict():
         result = request.form['Review_url']
         #driver = webdriver.Chrome(r'C:\Users\harshitha\Downloads\chromedriver_win321\chromedriver.exe')
         page=result + "&pageNumber"
-        for x in range(1,5):
+        for x in range(1,2):
             base_url=page+"={}".format(x)
             driver.get(base_url)
             html = driver.page_source

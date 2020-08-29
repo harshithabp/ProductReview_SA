@@ -10,17 +10,19 @@ import emoji
 from textblob import TextBlob
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pandas as pd
-import re
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import os
-opts = webdriver.ChromeOptions()
-opts.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-opts.add_argument("--headless")
-opts.add_argument("--disable-dev-shm-ussage")
-opts.add_argument("--no-sandbox")
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER PATH"), chrome_options=opts) 
+from selenium import webdriver
+
+op=webdriver.ChromeOptions()
+op.binary_location=os.environ.get("GOOGLE_CHROME_BIN")
+op.add_argument("--headless")
+op.add_argument("--no-sandbox")
+op.add_argument("--disable-dev-sh-usage")
+
+driver=webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),chrome_options=op)
+
+import re
+
 
 
 
